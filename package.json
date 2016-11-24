@@ -4,11 +4,13 @@
   "description": "run sass files",
   "author": "Sachin",
   "dependencies": {
+    "browserify": "^13.1.1",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-connect": "^5.0.0",
-    "gulp-sass": "^2.3.1"
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^2.0.0"
   },
   "devDependencies": {
     "gulp-concat": "^2.6.0"
