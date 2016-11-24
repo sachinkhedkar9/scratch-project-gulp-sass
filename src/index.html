@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="grid-search-bar container-fluid">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-xs-6 col-sm-6 col-md-6 header-search-container pull-left">
+                <!--<input type="text" class="header-search-text" placeholder="Search using name or ID"/>-->
+                <!--<button>OK</button>-->
+                <div class="input-group">
+                    <input type="text" class="header-search-text" placeholder="Search using name or ID"/>
+                    <span class="input-group-addon glyphicon glyphicon-search header-search-icon" ></span>
+                </div>
+            </div>
+            <div class="col-xs-5 col-sm-5 col-md-5">
+
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1 text-right"><span class="glyphicon glyphicon-repeat custom-reload-icon"></span> </div>
+
+        </div>
+    </div>
+</div>
+<!-- start: grid section -->
+<section class="container grid-section">
+
+    <div class="row">
+        <!-- start: filter section -->
+        <div class="col-xs-2 col-sm-2 col-md-2 filter-container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 filter-list-heading">
+                    Invoices
+                </div>
+            </div>
+
+            <div class="your-invoices-text">
+                Your Invoices (<span>35</span>)
+            </div>
+            <div class="filter-list">
+                <div class="filter-list-subheading">
+                    By task
+                </div>
+                <ul class="row filter-list-items list-unstyled">
+                    <li>Assigned to you (<span>43</span>)</li>
+                    <li>Assigned to team (<span>43</span>)</li>
+                    <li>Assigned to groups (<span>43</span>)</li>
+                    <li>Assigned to queue (<span>43</span>)</li>
+                    <li>All (<span>43</span>)</li>
+                </ul>
+
+                <div class="filter-list-subheading">
+                    By state
+                </div>
+                <div class="row">
+                    <div></div>
+
+                </div>
+                <ul class="row filter-list-items list-unstyled">
+                    <li>Incoming (<span>43</span>)</li>
+                    <li>Reconciling (<span>43</span>)</li>
+                    <li>In approval (<span>43</span>)</li>
+                    <li>In transfer (<span>43</span>)</li>
+                    <li>Rejected (<span>43</span>)</li>
+                    <li>Failed (<span>43</span>)</li>
+                    <li>Paid (<span>43</span>)</li>
+                </ul>
+                <div class="filter-list-subheading">
+                    Processed
+                </div>
+                <ul class="row filter-list-items list-unstyled">
+                    <li>Before 180 days (<span>1,298</span>)</li>
+                </ul>
+            </div>
+        </div><!-- end: filter section -->
+
+        <div class="col-xs-10 col-sm-10 col-md-10 invoice-table-section">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 clearfix">
+                    <div class="pull-left page-header-text">Assigned to you</div>
+                    <button class="btn-secondary pull-right">Manage queue rules</button>
+                </div>
+            </div>
+        </div>
+        <!-- start: tile section -->
+        <div class="tile-section">
+            <div class="col-xs-2 col-sm-2 col-md-2">
+                <div class="tile-box tile-default">
+                    <div class="tile-number">28</div>
+                    <div class="tile-text">All</div>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2">
+                <div class="tile-box tile-high-warning">
+                    <div class="tile-number">5</div>
+                    <div class="tile-text tile-high-warning-text">Overdue</div>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2">
+                <div class="tile-box tile-warning">
+                    <div class="tile-number">11</div>
+                    <div class="tile-text tile-warning-text">Due today</div>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2">
+                <div class="tile-box tile-default">
+                    <div class="tile-number">7</div>
+                    <div class="tile-text">Due soon</div>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2">
+                <div class="tile-box tile-default">
+                    <div class="tile-number">5</div>
+                    <div class="tile-text">New to you</div>
+                </div>
+            </div>
+        </div><!-- end: tile section -->
+
+        <div class="col-xs-10 col-sm-10 col-md-10 invoice-table-header-section">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 clearfix">
+                    <div class="pull-left table-header-text"><span>28</span> Invoices</div>
+                    <div class="pull-right">
+                        <input type="text" class="table-search-text">
+                        <span class="glyphicon glyphicon-search custom-search-icon"></span>
+                        <span class="glyphicon glyphicon-th-list custom-column-view-icon"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section><!-- end: grid section -->
+<script src="css/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

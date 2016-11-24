@@ -1,0 +1,16 @@
+{
+  "name": "run-sass",
+  "version": "1.0.0",
+  "description": "run sass files",
+  "author": "Sachin",
+  "dependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-connect": "^5.0.0",
+    "gulp-sass": "^2.3.1"
+  },
+  "devDependencies": {
+    "gulp-concat": "^2.6.0"
+  }
+}
