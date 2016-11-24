@@ -3,10 +3,11 @@
 var gulp = require('gulp'),                   // importing Gulp
     sass = require('gulp-sass'),              // tool for compilng scss files to css
     del = require('del'),                     // tool for cleaning(deleting) up files and folders
+    jshint = require("gulp-jshint"),          // Detect errors and potential problems in your JavaScript code.
     connect = require("gulp-connect"),        // Gulp plugin to run a webserver (with LiveReload)
     concat = require("gulp-concat"),          // tool for merging the multiple files into one
     uglify = require("gulp-uglify"),          // gulp-uglify emits an 'error' event if it is unable to minify a specific file.
-    browserify = require("browserify"),       // Browserify will recursively analyze all the require() calls in your app in order to build a bundle you can serve up to the browser in a single <script> tag. 
+    // browserify = require("browserify"),       // Browserify will recursively analyze all the require() calls in your app in order to build a bundle you can serve up to the browser in a single <script> tag. 
     pkg = require("./package.json");          // Include the dependencies
 
 
@@ -54,7 +55,14 @@ gulp.task('sass:watch', function () {
 
 
 // ------------------------- Compile and concatenate all js files in app.js -----
-gulp.task('build-scripts', function() {
+gulp.task('jshint', function(){
+  return  gulp.src([Config.srcdir + '/app.js', Config.srcdir + '/js/**.js'])
+      .pipe(jshint())
+      .pipe(jshint.reporter('jshint-stylish'))
+      .pipe(jshint.reporter('fail'))
+});
+
+gulp.task('build-scripts', ['jshint'], function() {
   return  gulp.src([Config.srcdir + '/app.js', Config.srcdir + '/js/**.js'])
     .pipe(concat('app.js'))
     .pipe(uglify())
