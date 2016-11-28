@@ -7,7 +7,8 @@ var gulp = require('gulp'),                   // importing Gulp
     connect = require("gulp-connect"),        // Gulp plugin to run a webserver (with LiveReload)
     concat = require("gulp-concat"),          // tool for merging the multiple files into one
     uglify = require("gulp-uglify"),          // gulp-uglify emits an 'error' event if it is unable to minify a specific file.
-    // browserify = require("browserify"),       // Browserify will recursively analyze all the require() calls in your app in order to build a bundle you can serve up to the browser in a single <script> tag. 
+    // browserify = require("browserify"),       // Browserify will recursively analyze all the require() calls in your app in order to build a bundle you can serve up to the browser in a single <script> tag.
+    browserSync = require("browser-sync").create(), // Reload brower when any change is made in html/scss/js 
     pkg = require("./package.json");          // Include the dependencies
 
 
@@ -29,8 +30,9 @@ var Config = {
 
 gulp.task('default', function(){
   console.log('\n\n\n\n---------------------- Gulp Menu --------------------------');
-  console.log('gulp clean         - delete build folder (public folder)')
+  console.log('gulp clean         - delete build folder (target folder)')
   console.log('gulp sass          - to compile .scss files.  ');
+  console.log('gulp build-scripts - compile and concatenate js files')
   console.log('gulp build         - to build the project files');
   console.log('gulp serve/server  - host build files at localhost:8080')
   console.log('-----------------------------------------------------------\n\n');
@@ -47,10 +49,6 @@ gulp.task('sass', function () {
   return gulp.src(Config.srcdir + '/app.scss')
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(gulp.dest(Config.destdir + '/css'));
-});
- 
-gulp.task('sass:watch', function () {
-  gulp.watch('./src/app.scss', ['sass']);
 });
 
 
@@ -90,10 +88,22 @@ gulp.task("build", ["build-scripts", "sass", "assets", "index"], function() {
 
 // ------------------------ Create localhost ---------------------------------
 gulp.task("server", function() {
-  connect.server({
-    root: "public",
-    post: 8080
-  });
+    browserSync.init({
+        server: "./public",
+        port: 8080
+    });
+
+  gulp.watch('./src/**/*.scss', ['sass']);
+  gulp.watch('./src/**/*.js', ['build-scripts']);
+
+
+  gulp.watch(['./src/**/*.scss', './src/**/*.js', './src/**/*.html']).on('change', browserSync.reload);
+
+  // connect.server({
+  //   root: "target",
+  //   post: 8080
+  // });
 });
 
 gulp.task("serve", ["server"]);
+
