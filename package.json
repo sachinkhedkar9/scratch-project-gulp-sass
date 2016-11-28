@@ -2,8 +2,10 @@
   "name": "run-sass",
   "version": "1.0.0",
   "description": "run sass files",
-  "author": "Sachin",
+  "author": "Sachin Khedkar",
+  "repository": "https://github.com/sachinkhedkar9/scratch-project-gulp-sass.git",
   "dependencies": {
+    "bower": "^1.8.0",
     "browserify": "^13.1.1",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
@@ -15,7 +17,12 @@
     "jshint": "^2.9.4"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "jshint-stylish": "^2.2.1"
+  },
+  "scripts": {
+    "postinstall": "bower install"
   }
 }
