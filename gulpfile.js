@@ -35,7 +35,6 @@ gulp.task('default', function(){
   console.log('gulp build-scripts - compile and concatenate js files')
   console.log('gulp build         - to build the project files');
   console.log('gulp serve/server  - host build files at localhost:8080')
-  console.log('gulp publish       - clean --> build --> serve')
   console.log('-----------------------------------------------------------\n\n');
 });
 
@@ -50,11 +49,6 @@ gulp.task('sass', function () {
   return gulp.src(Config.srcdir + '/app.scss')
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(gulp.dest(Config.destdir + '/css'));
-});
- 
-gulp.task('sass:watch', function () {
-  gulp.watch(['./src/scss/*.scss', './src/app.scss' ], ['sass']);
-      // .watch('./src/app.scss', ['sass']);
 });
 
 
