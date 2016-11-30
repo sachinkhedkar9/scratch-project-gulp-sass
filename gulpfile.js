@@ -88,6 +88,12 @@ gulp.task("build", [ "assets-content", "build-scripts", "sass", "support-files"]
 });
 
 
+// ------------------------ Refresh HTML -------------------------------------
+gulp.task("refresh-html", function(){
+  return gulp.src(Config.srcdir + '/**/*.html')
+        .pipe(gulp.dest(Config.destdir))
+}); 
+
 
 // ------------------------ Create localhost ---------------------------------
 gulp.task("server", function() {
@@ -96,11 +102,16 @@ gulp.task("server", function() {
         port: 8080
     });
 
-  gulp.watch('./src/**/*.scss', ['sass']);
-  gulp.watch('./src/**/*.js', ['build-scripts']);
+  gulp.watch('./src/**/*.scss', ['sass']).on('change', function(){
+    setTimeout(browserSync.reload, 1000)
+  });
+  gulp.watch('./src/**/*.js', ['build-scripts']).on('change', function(){
+    setTimeout(browserSync.reload, 1000)
+  });
+  gulp.watch('./src/**/*.html', ['refresh-html']).on('change', function(){
+    setTimeout(browserSync.reload, 1000)
+  });
 
-
-  gulp.watch(['./src/**/*.scss', './src/**/*.js', './src/**/*.html']).on('change', browserSync.reload);
 });
 
 gulp.task("serve", ["server"]);
