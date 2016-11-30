@@ -8,7 +8,7 @@ var gulp = require('gulp'),                   // importing Gulp
     concat = require("gulp-concat"),          // tool for merging the multiple files into one
     uglify = require("gulp-uglify"),          // gulp-uglify emits an 'error' event if it is unable to minify a specific file.
     // browserify = require("browserify"),       // Browserify will recursively analyze all the require() calls in your app in order to build a bundle you can serve up to the browser in a single <script> tag.
-    browserSync = require("browser-sync").create(), // Reload brower when any change is made in html/scss/js 
+    browserSync = require("browser-sync").create(), // Reload brower when any change is made in html/scss/js
     pkg = require("./package.json");          // Include the dependencies
 
 
@@ -22,6 +22,7 @@ var Config = {
     "/font/",
     "/images/",
     "/views/",
+    "/bower_components/",
     "/favicon.ico"
   ]
 };
@@ -69,19 +70,21 @@ gulp.task('build-scripts', ['jshint'], function() {
 
 
 // ------------------------ Create build files ------------------------------
-gulp.task('assets', function() {
-  Config.assets.forEach(function(ass) {
-    return gulp.src(Config.srcdir + ass + "**/*.*")
-      .pipe(gulp.dest(Config.destdir + ass));
-  });
-});
 
-gulp.task('index', function() {
+gulp.task('support-files', function() {
   return gulp.src([Config.srcdir + "/*.{html, js, css, png, jpeg, jpg, gif, json, ico}"])
     .pipe(gulp.dest(Config.destdir));
 });
 
-gulp.task("build", ["build-scripts", "sass", "assets", "index"], function() {
+gulp.task('assets-content', function(){
+  Config.assets.forEach(function(asset){
+    return gulp.src(Config.srcdir + asset + '/**/*.*', {base: Config.srcdir})
+          .pipe(gulp.dest(Config.destdir))
+  });
+});
+
+
+gulp.task("build", [ "assets-content", "build-scripts", "sass", "support-files"], function() {
 });
 
 
@@ -98,11 +101,6 @@ gulp.task("server", function() {
 
 
   gulp.watch(['./src/**/*.scss', './src/**/*.js', './src/**/*.html']).on('change', browserSync.reload);
-
-  // connect.server({
-  //   root: "target",
-  //   post: 8080
-  // });
 });
 
 gulp.task("serve", ["server"]);

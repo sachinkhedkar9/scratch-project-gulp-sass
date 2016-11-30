@@ -8,5 +8,6 @@ public
 /RUNNING_PID
 /bin/
 /node_modules/
-/bower_components/
+/src/bower_components/
+/public/bower_components/
 /nbproject  
