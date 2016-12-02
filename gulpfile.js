@@ -55,14 +55,14 @@ gulp.task('sass', function () {
 
 // ------------------------- Compile and concatenate all js files in app.js -----
 gulp.task('jshint', function(){
-  return  gulp.src([Config.srcdir + '/app.js', Config.srcdir + '/js/**.js'])
+  return  gulp.src([Config.srcdir + '/app.js', Config.srcdir + '/js/**/*.js'])
       .pipe(jshint())
       .pipe(jshint.reporter('jshint-stylish'))
       .pipe(jshint.reporter('fail'))
 });
 
 gulp.task('build-scripts', ['jshint'], function() {
-  return  gulp.src([Config.srcdir + '/app.js', Config.srcdir + '/js/**.js'])
+  return  gulp.src([Config.srcdir + '/app.js', Config.srcdir + '/js/**/*.js'])
     .pipe(concat('app.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./'+ Config.destdir +'/js/'));
