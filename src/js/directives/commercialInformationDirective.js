@@ -1,8 +1,10 @@
 skeleton.directive('commercialInformation', function() {
   return {
+    restrict: 'E',
     templateUrl: '../views/shital/commercialInformation.html',
+    scope: "=",
     link: function(scope, ele, attrs){
-      scope.flag = false;
+      // console.log('hello scope = ', scope);
     }
   };
 });

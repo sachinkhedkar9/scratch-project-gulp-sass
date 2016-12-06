@@ -1,13 +1,13 @@
-.CTOOL-table th{
-  /*background: $color_silver;*/
-}
-.CTOOL-table td{
-}
-
 .showTable{
   display: block;
 }
 
 .hideTable{
   display: none;
+}
+
+.hr-extended{
+  width: 100%;
+  border: 1px solid $color_iron_approx;
+  margin: 10px 0 20px 0;
 }

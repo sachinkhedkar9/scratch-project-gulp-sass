@@ -13,7 +13,7 @@
                                 ng-options="opt.id as opt.name for opt in users" 
                                 ng-model="selectedUser"></select>                    
                     </select>
-                                        <span>{{selectedUser}}, {{users[selectedUser]["name"]}}</span>
+                    <span ng-model="selectedUser"></span>
                 </div>
             </div>
         </td>
