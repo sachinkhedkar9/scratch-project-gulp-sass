@@ -37,7 +37,8 @@ skeleton.controller('ctoolController', ["$scope", "$location", function($scope, 
     serviceLevel    : $scope.commercial.serviceLevel[0],
     trafficType     : $scope.commercial.trafficType[0],
     interfaceType   : $scope.commercial.interfaceType[0],
-    techName        : "Test Account"
+    techName        : "Test Account",
+    existingCompany : "Xoriant sol."
   };
 
   // $scope.opt = $scope.users[0];

@@ -23,41 +23,42 @@
 
 <div ng-controller="ctoolController" class='sap-form'> 
     <section>
-        <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
-        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
-            <div class='content'>
-                <h3 class="page-heading">Create Account</h3>
-                <div class="hr-extended"></div>
-
-                <h4 class="breadcrumbs">Commercial Information</h4>
-                <commercial-information></commercial-information>
-
-            </div>
-
-            <div ng-class="getTables" id="second-level">
+        <form name="ctoolControllerForm">
+            <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
                 <div class='content'>
-                    
-                    <h4  class="breadcrumbs"> Technical Details</h4>
-                    <!--<div class="hr-extended"></div>-->
-                    
-                    <technical-contact></technical-contact>
+                    <h3 class="page-heading">Create Account</h3>
+                    <div class="hr-extended"></div>
+
+                    <h4 class="breadcrumbs">Commercial Information</h4>
+                    <commercial-information></commercial-information>
+
                 </div>
 
-                <div class='content'>
-                
-                    <h4  class="breadcrumbs">Account Name and Interfaces</h4>
-                    <!--<div class="hr-extended"></div>-->
-                    <account-names></account-names>                
+                <div ng-class="getTables" id="second-level">
+                    <div class='content'>
+                        
+                        <h4  class="breadcrumbs"> Technical Details</h4>
+                        <!--<div class="hr-extended"></div>-->
+                        
+                        <technical-contact></technical-contact>
+                    </div>
+
+                    <div class='content'>
+                    
+                        <h4  class="breadcrumbs">Account Name and Interfaces</h4>
+                        <!--<div class="hr-extended"></div>-->
+                        <account-names></account-names>                
 
 
-                    <button class="sap-btn sap-btn-primary" ng-click="showNextTables(!showNextFlag)">Back</button>
-                    <button class="sap-btn sap-btn-primary">Next</button>
+                        <button class="sap-btn sap-btn-primary" ng-click="showNextTables(!showNextFlag)">Back</button>
+                        <button class="sap-btn sap-btn-primary">Next</button>
 
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
-
+            <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
+        </form>
     </section>
 </div>
 
