@@ -66,6 +66,15 @@ body{
   table>tbody>tr>td{
         vertical-align: middle;
   }
+
+  label{
+    font-weight: normal;
+    color: $color_tapa_approx;
+  }
+
+  input, select{
+    color: $color_tapa_approx;
+  }
 }
 
 .footer{
@@ -84,9 +93,10 @@ body{
     margin-right: auto;
     margin-left: auto;
     margin-top: 100px;
+    text-align: center;
 
     input[type="password"]{
-      margin-top: 10px;
+      margin: 10px 0;
     }
 }
 

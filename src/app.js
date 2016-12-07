@@ -5,8 +5,8 @@ skeleton.config(['$routeProvider', function($routeProvider){
   when("/ctool/",{
     templateUrl: 'views/ctool/index.html'
   }).
-  when("/rohit/",{
-    templateUrl: 'views/rohit/index.html',
+  when("/grid-page/",{
+    templateUrl: 'views/grid-page/index.html',
   }).
   otherwise({
     redirectTo: '/login/',

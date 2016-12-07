@@ -12,7 +12,7 @@ skeleton.controller('ctoolController', ["$scope", "$location", function($scope, 
       id:2
     },
     {
-      name:'Rohit', 
+      name:'grid-page', 
       id:3
     },
     {
