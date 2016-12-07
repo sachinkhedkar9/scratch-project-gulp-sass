@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12">
                     <input class="form-control" type="text" name="name" required="Please enter name." ng-model="json.newName"></input>
-                    <span class="error" ng-show="ctoolControllerForm.name.$touched">Please enter name.</span>
+                    <span class="error" ng-show="ctoolControllerForm.name.$touched && ctoolControllerForm.name.$invalid">Please enter name.</span>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-1 col-xs-12"><label>(NEW)</label></div>
             </div>
@@ -38,9 +38,10 @@
         <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <input class="form-control" type="email" name="email" ng-model="json.email"></input>
-                    <span class="error" ng-show="ctoolControllerForm.email.$touched">Please enter email.</span>                    
-                    <span class="error" ng-show="ctoolControllerForm.email.$invalid">Please enter valid email.</span>                    
+                    <input class="form-control" type="email" name="email" ng-model="json.email" required></input>
+                    <span class="error" ng-show="ctoolControllerForm.email.$touched && ctoolControllerForm.email.$invalid">
+                        Please enter valid email.
+                    </span>                    
                 </div>
             </div>
         </td>
