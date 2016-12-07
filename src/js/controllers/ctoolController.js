@@ -1,4 +1,4 @@
-skeleton.controller('ctoolController', ["$scope", function($scope){  
+skeleton.controller('ctoolController', ["$scope", "$location", function($scope, $location){  
   $scope.getTables = "hideTable";    
   $scope.showNextFlag = false;
 
@@ -52,5 +52,9 @@ skeleton.controller('ctoolController', ["$scope", function($scope){
     console.log('in replaceStringsWithEditables');
   };
 
+  $scope.logout = function(){
+    console.log('logging out');
+    $location.path('/login/');
+  };
 
 }]);

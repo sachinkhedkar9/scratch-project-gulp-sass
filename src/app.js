@@ -2,13 +2,15 @@ var skeleton = angular.module("skeletonApp",['ngRoute']);
 
 skeleton.config(['$routeProvider', function($routeProvider){
   $routeProvider.
-  when("/shital/",{
-    templateUrl: 'views/shital/index.html'
+  when("/ctool/",{
+    templateUrl: 'views/ctool/index.html'
   }).
   when("/rohit/",{
     templateUrl: 'views/rohit/index.html',
   }).
   otherwise({
-    redirectTo: '/shital/'
+    redirectTo: '/login/',
+    templateUrl: 'views/essential/login.html',
+    controller: 'loginController'
   });
 }]);

@@ -1,0 +1,129 @@
+<div ng-if="!showNextFlag">
+    <table class="CTOOL-table table table-stripped table-condensed form-group ">
+        <tbody>
+        <tr>
+            <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Requester</td>
+            <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">Venkat</td>
+        </tr>
+        <tr>
+            <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Account Manager</td>
+            <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <select class="form-control" id="sel1"
+                                    ng-options="opt.name for opt in users" 
+                                    ng-model="opt"></select>
+                        </select>                                        
+                                    <!--<span>{{opt.name}}</span>                    -->
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Company</td>
+            <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
+                <div class="row">
+                    <div class=" col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                        <select class="form-control" id="sel2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Billing Location</td>
+            <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <select class="form-control" id="sel3">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Service Level</td>
+            <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                        <select class="form-control" id="sel4">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Traffic Type</td>
+            <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                        <select class="form-control" id="sel5">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Revenue Sharing</td>
+            <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">No</td>
+        </tr>
+        
+        </tbody>
+    </table>
+
+    <br>
+    <button class="sap-btn sap-btn-primary" ng-click="showNextTables(!showNextFlag)">Next</button>
+</div>
+
+<table class="CTOOL-table table table-stripped table-condensed form-group" ng-if="showNextFlag">
+    <tbody>
+    <tr>
+        <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Requester</td>
+        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">Venkat</td>
+    </tr>
+    <tr>
+        <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Account Manager</td>
+        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">{{accountManager}}</td>
+    </tr>
+
+    <tr>
+        <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Company</td>
+        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">{{company}}</div>
+        </td>
+    </tr>
+    <tr>
+        <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Billing Location</td>
+        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">{{billing_location}}</td>
+    </tr>
+    <tr>
+        <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Service Level</td>
+        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">{{serviceLevel}}</td>
+    </tr>
+    <tr>
+        <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Traffic Type</td>
+        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">{{traffic_data}}</td>
+    </tr>
+    <tr>
+        <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Revenue Sharing</td>
+        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">No</td>
+    </tr>
+    
+    </tbody>
+</table>

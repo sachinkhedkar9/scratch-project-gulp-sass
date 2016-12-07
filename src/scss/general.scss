@@ -12,9 +12,14 @@ body{
   background: $offwhite1;
 }
 
+.page-heading{
+  color: $color_tuatara_approx;
+}
+
 .content{
   background: $white;
   padding: 15px;
+  margin-bottom: 20px; 
 }
 
 .sap-btn{
@@ -38,6 +43,8 @@ body{
 } 
 
 .sap-form{
+  color: $color_tapa_approx; 
+
   .form-control{
     border-radius: 0;
     height: 32px;
@@ -49,10 +56,54 @@ body{
       font-weight: normal;
       font-style: normal;
       font-stretch: normal;
-      color: #363636;
+      color: $color_tuatara_approx;      
   }
 
   tr:hover{        
     background-color: $offwhite2;
   }
+
+  table>tbody>tr>td{
+        vertical-align: middle;
+  }
+}
+
+.footer{
+  height: 15px;
+  position: fixed;
+  font-size: 10px;
+  bottom: 0;
+  background: $color_tapa_approx;
+  color: $white;
+  width: 100%;
+}
+
+.login-container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+
+    input[type="password"]{
+      margin-top: 10px;
+    }
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin .form-signin-heading, .form-signin .checkbox {
+    margin-bottom: 10px;
+}
+
+.required{
+  color: $color_milano_red_approx;
+}
+
+.breadcrumbs{
+  color: $color_bahama_blue_approx;
 }
