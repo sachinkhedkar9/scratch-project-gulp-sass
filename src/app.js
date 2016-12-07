@@ -9,6 +9,6 @@ skeleton.config(['$routeProvider', function($routeProvider){
     templateUrl: 'views/rohit/index.html',
   }).
   otherwise({
-    redirectTo: '/rohit/'
+    redirectTo: '/shital/'
   });
 }]);

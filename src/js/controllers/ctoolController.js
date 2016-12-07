@@ -9,19 +9,19 @@ skeleton.controller('ctoolController', ["$scope", function($scope){
     },
     {
       name:'Jay', 
-      id:3
+      id:2
     },
     {
       name:'Rohit', 
-      id:5
+      id:3
     },
     {
       name:'Sathish', 
-      id:7
+      id:4
     }
   ];
 
-  $scope.selectedUser = 1;
+  $scope.opt = $scope.users[0];
 
   $scope.showNextTables = function(flag){
     console.log('flag = ', flag);

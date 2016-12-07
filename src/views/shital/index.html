@@ -21,32 +21,38 @@
 </nav>
 
 
-<div ng-controller="ctoolController"> 
+<div ng-controller="ctoolController" class='sap-form'> 
     <section>
         <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
         <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
-            <h3>Create Account</h3>
-            <div class="hr-extended"></div>
-            <!--<hr />-->
+            <div class='content'>
+                <h3>Create Account</h3>
+                <div class="hr-extended"></div>
+                <!--<hr />-->
+                <h4>Commercial Information</h4>
+                <commercial-information></commercial-information>
+            </div>
 
-            <h4>Commercial Information</h4>
-            <commercial-information></commercial-information>
-            
             <div ng-class="getTables" id="second-level">
-                <h4> Technical Details</h4>
-                <div class="hr-extended"></div>
-                <!--<hr />-->
-                
-                <technical-contact></technical-contact>
-
+                <div class='content'>
+                    
+                    <h4> Technical Details</h4>
+                    <div class="hr-extended"></div>
+                    <!--<hr />-->
+                    
+                    <technical-contact></technical-contact>
+                </div>
                 <br />
-                <h4>Account Name and Interfaces</h4>
-                <div class="hr-extended"></div>
-                <!--<hr />-->
-                <account-names></account-names>                
 
-                <button class="btn btn-primary" ng-click="showNextTables(!showNextFlag)">Back</button>
-                <button class="btn btn-primary">Next</button>
+                <div class='content'>
+                
+                    <h4>Account Name and Interfaces</h4>
+                    <div class="hr-extended"></div>
+                    <!--<hr />-->
+                    <account-names></account-names>                
+                </div>
+                <button class="sap-btn sap-btn-primary" ng-click="showNextTables(!showNextFlag)">Back</button>
+                <button class="sap-btn sap-btn-primary">Next</button>
             </div>
         </div>
         <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
