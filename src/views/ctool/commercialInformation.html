@@ -3,7 +3,7 @@
         <tbody>
         <tr>
             <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Requester</label></td>
-            <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label> Venkat</label></td>
+            <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label> {{json.requester}}</label></td>
         </tr>
         <tr>
             <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label> Account Manager</label></td>
@@ -11,8 +11,8 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <select class="form-control" id="sel1"
-                                    ng-options="opt.name for opt in users" 
-                                    ng-model="opt"></select>
+                                    ng-options="opt.name for opt in commercial.users" 
+                                    ng-model="json.acctMgr"></select>
                         </select>                                        
                                     <!--<span>{{opt.name}}</span>                    -->
                     </div>
@@ -25,11 +25,9 @@
             <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
                 <div class="row">
                     <div class=" col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                        <select class="form-control" id="sel2">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
+                        <select class="form-control" id="sel2"
+                                ng-model="json.company">
+                                <option ng-repeat="option in commercial.company">{{option}}</option>
                         </select>
                     </div>
                 </div>
@@ -40,11 +38,9 @@
             <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <select class="form-control" id="sel3">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
+                        <select class="form-control" id="sel3"
+                                ng-model="json.billingLocation">
+                            <option ng-repeat="option in commercial.billingLocation">{{option}}</option>
                         </select>
                     </div>
                 </div>
@@ -55,11 +51,9 @@
             <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
-                        <select class="form-control" id="sel4">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
+                        <select class="form-control" id="sel4"
+                                ng-model="json.serviceLevel">
+                            <option ng-repeat="option in commercial.serviceLevel">{{option}}</option>
                         </select>
                     </div>
                 </div>
@@ -70,11 +64,9 @@
             <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                        <select class="form-control" id="sel5">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
+                        <select class="form-control" id="sel5"
+                                ng-model="json.trafficType">
+                            <option ng-repeat="option in commercial.trafficType">{{option}}</option>
                         </select>
                     </div>
                 </div>
@@ -96,29 +88,29 @@
     <tbody>
     <tr>
         <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Requester</label></td>
-        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>Venkat</label></td>
+        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.requester}}</label></td>
     </tr>
     <tr>
         <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Account Manager</label></td>
-        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{accountManager}}</label></td>
+        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.acctMgr.name}}</label></td>
     </tr>
 
     <tr>
         <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Company</label></td>
-        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{company}}</label></div>
+        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.company}}</label></div>
         </td>
     </tr>
     <tr>
         <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Billing Location</label></td>
-        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{billing_location}}</label></td>
+        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.billingLocation}}</label></td>
     </tr>
     <tr>
         <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Service Level</label></td>
-        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{serviceLevel}}</label></td>
+        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.serviceLevel}}</label></td>
     </tr>
     <tr>
         <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Traffic Type</label></td>
-        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{traffic_data}}</label></td>
+        <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.trafficType}}</label></td>
     </tr>
     <tr>
         <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Revenue Sharing</label></td>
