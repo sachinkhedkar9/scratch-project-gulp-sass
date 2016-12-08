@@ -10,8 +10,9 @@ skeleton.controller('loginController', ["$scope", "$location", "$http", function
         if($scope.userLogin.username === $scope.loginUser.username && $scope.userLogin.password === $scope.loginUser.password){
             console.log("logging in", $location.path());
             // angular.element('#errorAlert').trigger('click');
-            var alert = $('#successAlert');
-            alert.modal('show');
+            // var alert = $('#successAlert');
+            // alert.modal('show');
+            $scope.navigateToApp();
         }
     };
 

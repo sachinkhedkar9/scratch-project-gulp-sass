@@ -1,15 +1,13 @@
 <table class="CTOOL-table table table-condensed table-stripped form-group ">
     <tbody>
     <tr>
-        <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Exsiting Company Contracts</label></td>
+        <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Exsiting Company Contacts</label></td>
         <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
             <div class="row">                            
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <select class="form-control" id="sel6">
-                        <option>Select Existing</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                    <select class="form-control" id="sel6"
+                            ng-options="contact as contact.contactName for contact in technical.contacts"
+                            ng-model="json.contact" ng-change="updateTechnicalDetails()">
                     </select>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
@@ -26,7 +24,7 @@
         <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12">
-                    <input class="form-control" type="text" name="name" required="Please enter name." ng-model="json.newName"></input>
+                    <input class="form-control" type="text" name="name" required="Please enter name." ng-model="json.contact.name"></input>
                     <span class="error" ng-show="ctoolControllerForm.name.$touched && ctoolControllerForm.name.$invalid">Please enter name.</span>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-1 col-xs-12"><label>(NEW)</label></div>
@@ -38,7 +36,7 @@
         <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <input class="form-control" type="email" name="email" ng-model="json.email" required></input>
+                    <input class="form-control" type="email" name="email" ng-model="json.contact.email" required></input>
                     <span class="error" ng-show="ctoolControllerForm.email.$touched && ctoolControllerForm.email.$invalid">
                         Please enter valid email.
                     </span>                    
@@ -51,11 +49,8 @@
         <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
             <div class="row">
                 <div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <select class="form-control" id="sel7">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                    <select class="form-control" id="sel7" ng-model="json.contact.country.name"
+                            ng-options="opt.name for opt in country">                        
                     </select>
             </div>
             </div>
@@ -66,7 +61,7 @@
         <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
             <div class="row">
                 <div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <input class="form-control" type="text"></input>
+                <input class="form-control" type="text" ng-model="json.contact.mobile"></input>
                 </div>
             </div>
         </td>
@@ -76,7 +71,7 @@
         <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
             <div class="row">
                 <div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <input class="form-control" type="text"></input>
+                    <input class="form-control" type="text" ng-model="json.contact.directMobile"></input>
                 </div>
             </div>
         </td>
