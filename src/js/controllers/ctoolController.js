@@ -147,7 +147,13 @@ skeleton.controller('ctoolController', ["$scope", "$location", function($scope, 
     console.log('json obtained - ', $scope.json);
 
     var necessaryData = {};
-    // necessaryData.
+    necessaryData.requester = $scope.json.requester; 
+    necessaryData.acctMgr = $scope.json.acctMgr;
+    necessaryData.company = $scope.json.company;
+    necessaryData.billingLocation = $scope.json.billingLocation;
+    necessaryData.trafficType = $scope.json.trafficType;
+    necessaryData.interfaceType = $scope.json.interfaceType;
+    necessaryData.techName = $scope.json.techName;
 
     // http://localhost:8080/accounts
     var login = {
@@ -157,7 +163,7 @@ skeleton.controller('ctoolController', ["$scope", "$location", function($scope, 
                 'Authorization': 'Basic ' + btoa('admin'+':'+'password'),
                 'Content-type': 'application/json'
             },
-            data: $scope.json
+            data: necessaryData
         };
 
         $http(login).then(function(successData){
