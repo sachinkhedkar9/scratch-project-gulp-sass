@@ -11,12 +11,12 @@
 <div class="login-container sap-form">
     <form class="form-signin content" name="loginForm">
     <h2 class="form-signin-heading">Login</h2>
-    <label for="userName" class="sr-only">User Name</label>
-    <input type="text" id="userName" class="form-control" name="userName" 
+    <label for="username" class="sr-only">User Name</label>
+    <input type="text" id="username" class="form-control" name="username" 
            placeholder="User Name" required="" autofocus=""
            ng-model="loginUser.username">
 
-    <span class="error" ng-show="loginForm.userName.$touched && loginForm.userName.$invalid">User name is required.</span>
+    <span class="error" ng-show="loginForm.username.$touched && loginForm.username.$invalid">User name is required.</span>
 
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" id="inputPassword" 

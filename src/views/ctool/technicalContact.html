@@ -49,8 +49,8 @@
         <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
             <div class="row">
                 <div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <select class="form-control" id="sel7" ng-model="json.contact.country.name"
-                            ng-options="opt.name for opt in country">                        
+                    <select class="form-control" id="sel7" ng-model="json.country">
+                            <option ng-repeat="option in country">{{option}}</option>                        
                     </select>
             </div>
             </div>
@@ -61,7 +61,7 @@
         <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
             <div class="row">
                 <div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <input class="form-control" type="text" ng-model="json.contact.mobile"></input>
+                <input class="form-control" type="text" ng-model="json.contact.mobilePhoneNumber"></input>
                 </div>
             </div>
         </td>
@@ -71,7 +71,7 @@
         <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9">
             <div class="row">
                 <div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <input class="form-control" type="text" ng-model="json.contact.directMobile"></input>
+                    <input class="form-control" type="text" ng-model="json.contact.directPhoneNumber"></input>
                 </div>
             </div>
         </td>
