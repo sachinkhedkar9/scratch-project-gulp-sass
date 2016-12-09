@@ -1,4 +1,4 @@
-skeleton.controller('ctoolController', ["$scope", "$location", function($scope, $location){  
+skeleton.controller('ctoolController', ["$scope", "$location", "$http", function($scope, $location, $http){  
   $scope.getTables = "hideTable";    
   $scope.showNextFlag = false;
 
@@ -79,8 +79,6 @@ skeleton.controller('ctoolController', ["$scope", "$location", function($scope, 
     }
   ];
 
-  var newContactData = $scope.getContactData();
-
   $scope.existingAccounts = ['118118_Bulk_HTTP','118119_Bulk_HTTP','1181520_Bulk_HTTP','118121_Bulk_HTTP'];
 
   $scope.requesterName = 'Venkat';
@@ -131,8 +129,10 @@ skeleton.controller('ctoolController', ["$scope", "$location", function($scope, 
   $scope.getContactData = function(){
     return $http.get('/techContact/123')
     .then($scope.succesGetContactData)  
-    .then($scope.errorContactData)
+    .then($scope.errorContactData);
   };
+
+  var newContactData = $scope.getContactData();
 
   $scope.succesGetContactData = function(data){
       console.log('data = ', data);
