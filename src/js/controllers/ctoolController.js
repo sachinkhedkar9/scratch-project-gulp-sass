@@ -103,6 +103,7 @@ skeleton.controller('ctoolController', ["$scope", "$location", function($scope, 
     }
   ];
 
+  $scope.existingAccounts = ['HDFC','HSBC','Bank Of America','Bank Of China'];
 
 
   // Once the rest calls are set then we do not need this json 
@@ -145,6 +146,10 @@ skeleton.controller('ctoolController', ["$scope", "$location", function($scope, 
 
   $scope.updateTechnicalDetails = function(){
     console.log('ng-model - ', $scope.json.contact);
+  };
+
+  $scope.create = function(){
+    console.log('json obtained - ', $scope.json);
   };
 
 }]);
