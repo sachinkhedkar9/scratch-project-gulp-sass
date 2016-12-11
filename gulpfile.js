@@ -61,14 +61,17 @@ gulp.task('jshint', function(){
       .pipe(jshint.reporter('fail'))
 });
 
+// gulp.task('build-scripts', ['jshint'], function() {
+//   return  gulp.src([Config.srcdir + '/app.js', Config.srcdir + '/js/**/*.js'])
+//     .pipe(concat('app.js'))
+//     .pipe(uglify())
+//     .pipe(gulp.dest('./'+ Config.destdir +'/js/'));
+// });
+
 gulp.task('build-scripts', ['jshint'], function() {
-  return  gulp.src([Config.srcdir + '/app.js', Config.srcdir + '/js/**.js'])
-    .pipe(concat('app.js'))
-    .pipe(uglify())
+  return  gulp.src([Config.srcdir + '/app.js', Config.srcdir + '/js/**/*.js'])
     .pipe(gulp.dest('./'+ Config.destdir +'/js/'));
 });
-
-
 // ------------------------ Create build files ------------------------------
 
 gulp.task('support-files', function() {
