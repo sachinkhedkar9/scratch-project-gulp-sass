@@ -1,7 +1,16 @@
-console.log('hello there... you are compiling app.js');
+var skeleton = angular.module("skeletonApp",['ngRoute']);
 
-var a = 5, b = 5;
-
-var res = (a == b) ? 'equal' : 'not-equal';
-
-console.log('result = ', res); 
+skeleton.config(['$routeProvider', function($routeProvider){
+  $routeProvider.
+  when("/productList/",{
+    templateUrl: 'views/product/list.html'
+  }).
+  when("/product/",{
+    templateUrl: 'views/product/item.html',
+  }).
+  otherwise({
+    redirectTo: '/login/',
+    templateUrl: 'views/essential/login.html',
+    controller: 'loginController'
+  });
+}]);
