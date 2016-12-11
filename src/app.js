@@ -1,12 +1,13 @@
-var skeleton = angular.module("skeletonApp",['ngRoute']);
+var shoppingApp = angular.module("shoppingApp",['ngRoute']);
 
-skeleton.config(['$routeProvider', function($routeProvider){
+shoppingApp.config(['$routeProvider', function($routeProvider){
   $routeProvider.
   when("/productList/",{
     templateUrl: 'views/product/list.html'
   }).
-  when("/product/",{
+  when("/product/id=:id",{
     templateUrl: 'views/product/item.html',
+    controller: 'itemController'
   }).
   otherwise({
     redirectTo: '/login/',
