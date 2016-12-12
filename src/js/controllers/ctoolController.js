@@ -1,4 +1,4 @@
-skeleton.controller('ctoolController', ["$scope", "$location", "$http", function($scope, $location, $http){  
+skeleton.controller('ctoolController', ["$scope", "$location", "$http", "$rootScope", function($scope, $location, $http, $rootScope){  
   $scope.getTables = "hideTable";    
   $scope.showNextFlag = false;
 
@@ -156,14 +156,14 @@ skeleton.controller('ctoolController', ["$scope", "$location", "$http", function
   $scope.create = function(){
     console.log('json obtained - ', $scope.json);
 
-    $scope.necessaryData = {};
-    $scope.necessaryData.requester = $scope.json.requester; 
-    $scope.necessaryData.acctMgr = $scope.json.acctMgr;
-    $scope.necessaryData.company = $scope.json.company;
-    $scope.necessaryData.billingLocation = $scope.json.billingLocation;
-    $scope.necessaryData.trafficType = $scope.json.trafficType;
-    $scope.necessaryData.interfaceType = $scope.json.interfaceType;
-    $scope.necessaryData.techName = $scope.json.techName;
+    $rootScope.necessaryData = {};
+    $rootScope.necessaryData.requester = $scope.json.requester; 
+    $rootScope.necessaryData.acctMgr = $scope.json.acctMgr.name;
+    $rootScope.necessaryData.company = $scope.json.company;
+    $rootScope.necessaryData.billingLocation = $scope.json.billingLocation;
+    $rootScope.necessaryData.trafficType = $scope.json.trafficType;
+    $rootScope.necessaryData.interfaceType = $scope.json.interfaceType;
+    $rootScope.necessaryData.techName = $scope.json.techName;
 
     // console.log('necessaryData ===== ', $scope.necessaryData);
     // http://localhost:8080/accounts
@@ -174,20 +174,20 @@ skeleton.controller('ctoolController', ["$scope", "$location", "$http", function
                 'Authorization': 'Basic ' + btoa('admin'+':'+'password'),
                 'Content-type': 'application/json'
             },
-            data: $scope.stringifyJson($scope.necessaryData)
+            data: $scope.stringifyJson($rootScope.necessaryData)
         };
 
         $http(submit).then(function(successData){
             // post data success
             console.log('success data : ',successData);
-            $location.path('/ctool/$scope.necessaryData/');              // navigate to ctool home page.
+            $location.path('/ctool/necessaryData/');              // navigate to ctool home page.
         }).then(function(errorData){
             console.log('error data : ', errorData);
             angular.element('#errorAlert').trigger('click');
         });
 
-
-        $location.path('/ctool/necessaryData/');            
+        // uncomment the following line to navigate to the next page, even in case of error.
+        // $location.path('/ctool/necessaryData/');            
         
   };
 

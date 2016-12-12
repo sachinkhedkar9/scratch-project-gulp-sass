@@ -21,46 +21,47 @@
 </nav>
 
 
-<div ng-controller="ctoolController" class='sap-form'> 
-  
+<div class='sap-form'> 
   <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
-      <h4 class="breadcrumbs">Submitted Data</h4>
-      <table class="CTOOL-table table table-stripped table-condensed form-group">
-          <tbody>
-          <tr>
-              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Requester</label></td>
-              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.requester}}</label></td>
-          </tr>
-          <tr>
-              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Account Manager</label></td>
-              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.acctMgr.name}}</label></td>
-          </tr>
+      <div class='content'>
+        <h4 class="breadcrumbs">Submitted Data</h4>
+        <table class="CTOOL-table table table-stripped table-condensed form-group">
+            <tbody>
+            <tr>
+                <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Requester</label></td>
+                <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{necessaryData.requester}}</label></td>
+            </tr>
+            <tr>
+                <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Account Manager</label></td>
+                <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{necessaryData.acctMgr}}</label></td>
+            </tr>
 
-          <tr>
-              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Company</label></td>
-              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.company}}</label></div>
-              </td>
-          </tr>
-          <tr>
-              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Billing Location</label></td>
-              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.billingLocation}}</label></td>
-          </tr>
-          <tr>
-              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Traffic Type</label></td>
-              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.trafficType}}</label></td>
-          </tr>
-          <tr>
-              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Interface Type</label></td>
-              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.interfaceType}}</label></td>
-          </tr>
-          <tr>
-              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Technical Name</label></td>
-              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.techName}}</label></td>
-          </tr>
-          
-          </tbody>
-      </table>
+            <tr>
+                <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Company</label></td>
+                <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{necessaryData.company}}</label></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Billing Location</label></td>
+                <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{necessaryData.billingLocation}}</label></td>
+            </tr>
+            <tr>
+                <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Traffic Type</label></td>
+                <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{necessaryData.trafficType}}</label></td>
+            </tr>
+            <tr>
+                <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Interface Type</label></td>
+                <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{necessaryData.interfaceType}}</label></td>
+            </tr>
+            <tr>
+                <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Technical Name</label></td>
+                <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{necessaryData.techName}}</label></td>
+            </tr>
+            
+            </tbody>
+        </table>
+      </div>
     </div>  
   </div>
   <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
