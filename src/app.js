@@ -4,6 +4,9 @@ skeleton.config(['$routeProvider', function($routeProvider){
   $routeProvider.
   when("/ctool/",{
     templateUrl: 'views/ctool/index.html'
+  }).  
+  when("/ctool/necessaryData/",{
+    templateUrl: 'views/ctool/finalData.html'
   }).
   when("/grid-page/",{
     templateUrl: 'views/grid-page/index.html',

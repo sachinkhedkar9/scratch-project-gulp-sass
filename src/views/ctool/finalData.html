@@ -1,0 +1,67 @@
+<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+    <div class="container-fluid">
+       <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            </button>
+            <a class="navbar-brand" href="#/ctool">CTOOL</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#/ctool">Accounts <span class="sr-only">(current)</span></a></li>
+                <li><a href="#/ctool">Connections</a></li>
+                <li><a href="#/ctool">Operators</a></li>
+                <li><a href="#/ctool">Miscelleneous</a></li>
+                <li><a href="#/ctool">Toolbox</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-href="#/login/">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div ng-controller="ctoolController" class='sap-form'> 
+  
+  <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
+    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
+      <h4 class="breadcrumbs">Submitted Data</h4>
+      <table class="CTOOL-table table table-stripped table-condensed form-group">
+          <tbody>
+          <tr>
+              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Requester</label></td>
+              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.requester}}</label></td>
+          </tr>
+          <tr>
+              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Account Manager</label></td>
+              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.acctMgr.name}}</label></td>
+          </tr>
+
+          <tr>
+              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Company</label></td>
+              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.company}}</label></div>
+              </td>
+          </tr>
+          <tr>
+              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Billing Location</label></td>
+              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.billingLocation}}</label></td>
+          </tr>
+          <tr>
+              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Traffic Type</label></td>
+              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.trafficType}}</label></td>
+          </tr>
+          <tr>
+              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Interface Type</label></td>
+              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.interfaceType}}</label></td>
+          </tr>
+          <tr>
+              <td class="col-md-3 col-sm-3 col-lg-3 col-xs-3"><label>Technical Name</label></td>
+              <td class="col-md-9 col-sm-9 col-lg-9 col-xs-9"><label>{{json.techName}}</label></td>
+          </tr>
+          
+          </tbody>
+      </table>
+    </div>  
+  </div>
+  <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
+</div>

@@ -18,7 +18,16 @@ skeleton.controller('loginController', ["$scope", "$location", "$http", function
 
     // $scope.navigateToApp = function(){
     //     $location.path('/ctool/');        
-    // };
+    // };   
+
+
+    $scope.stringifyJson = function(data){
+        var log = [];
+        angular.forEach(data, function(value, key) {
+        this.push(key + '=' + value);
+        }, log);
+        return log.join('&');
+    };
 
     $scope.login = function(){
         var login = {
@@ -27,7 +36,7 @@ skeleton.controller('loginController', ["$scope", "$location", "$http", function
             headers: {
                 'Content-Type': "application/x-www-form-urlencoded"
             },
-            data: JSON.stringify($scope.loginUser)
+            data: $scope.stringifyJson($scope.loginUser)
         };
 
         $http(login).then(function(successData){

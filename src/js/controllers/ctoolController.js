@@ -92,7 +92,7 @@ skeleton.controller('ctoolController', ["$scope", "$location", "$http", function
     serviceLevel    : $scope.commercial.serviceLevel[0],
     trafficType     : $scope.commercial.trafficType[0],
     interfaceType   : $scope.account.interfaceType[0],
-    techName        : "",
+    techName        : null,
     existingCompany : "Xoriant sol.",
     contact         : $scope.technical.contacts[0],
     existingAccount : $scope.existingAccounts[0]
@@ -143,37 +143,52 @@ skeleton.controller('ctoolController', ["$scope", "$location", "$http", function
       console.log('data = ', data);
   };
 
+
+  $scope.stringifyJson = function(data){
+      var log = [];
+      angular.forEach(data, function(value, key) {
+      this.push(key + '=' + value);
+      }, log);
+      return log.join('&');
+  };
+
+
   $scope.create = function(){
     console.log('json obtained - ', $scope.json);
 
-    var necessaryData = {};
-    necessaryData.requester = $scope.json.requester; 
-    necessaryData.acctMgr = $scope.json.acctMgr;
-    necessaryData.company = $scope.json.company;
-    necessaryData.billingLocation = $scope.json.billingLocation;
-    necessaryData.trafficType = $scope.json.trafficType;
-    necessaryData.interfaceType = $scope.json.interfaceType;
-    necessaryData.techName = $scope.json.techName;
+    $scope.necessaryData = {};
+    $scope.necessaryData.requester = $scope.json.requester; 
+    $scope.necessaryData.acctMgr = $scope.json.acctMgr;
+    $scope.necessaryData.company = $scope.json.company;
+    $scope.necessaryData.billingLocation = $scope.json.billingLocation;
+    $scope.necessaryData.trafficType = $scope.json.trafficType;
+    $scope.necessaryData.interfaceType = $scope.json.interfaceType;
+    $scope.necessaryData.techName = $scope.json.techName;
 
+    // console.log('necessaryData ===== ', $scope.necessaryData);
     // http://localhost:8080/accounts
-    var login = {
+    var submit = {
             method: 'POST',
             url: 'http://localhost:8080/accounts',
             headers: {
                 'Authorization': 'Basic ' + btoa('admin'+':'+'password'),
                 'Content-type': 'application/json'
             },
-            data: necessaryData
+            data: $scope.stringifyJson($scope.necessaryData)
         };
 
-        $http(login).then(function(successData){
+        $http(submit).then(function(successData){
             // post data success
             console.log('success data : ',successData);
-            $location.path('/ctool/');              // navigate to ctool home page.
+            $location.path('/ctool/$scope.necessaryData/');              // navigate to ctool home page.
         }).then(function(errorData){
             console.log('error data : ', errorData);
             angular.element('#errorAlert').trigger('click');
         });
+
+
+        $location.path('/ctool/necessaryData/');            
+        
   };
 
 }]);
