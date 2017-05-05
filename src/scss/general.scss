@@ -1,0 +1,131 @@
+
+.seperator{
+  display: block;
+  height: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  /*border-top: 2px solid $color_silver;*/
+}
+
+body{
+  background: $offwhite1;
+}
+
+.page-heading{
+  color: $color_tuatara_approx;
+}
+
+.content{
+  background: $white;
+  padding: 15px;
+  margin-bottom: 20px; 
+}
+
+.sap-btn{
+  height: 36px;    
+}
+
+.data-block{
+  background: $white;
+}
+
+.sap-btn-primary {
+  border: solid 1px $color_lochmara_approx;
+  color: $color_lochmara_approx;
+  background: $white;
+  min-width: 120px;
+} 
+
+.sap-btn-primary:hover {  
+  background: $color_lochmara_approx;
+  color: $white;
+} 
+
+.sap-form{
+  color: $color_tapa_approx; 
+
+  .form-control{
+    border-radius: 0;
+    height: 32px;
+  }
+
+  .table{
+      font-family: ArialMT;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      color: $color_tuatara_approx;      
+  }
+
+  tr:hover{        
+    background-color: $offwhite2;
+  }
+
+  table>tbody>tr>td{
+        vertical-align: middle;
+  }
+
+  label{
+    font-weight: normal;
+    color: $color_tapa_approx;
+  }
+
+  input, select{
+    color: $color_tapa_approx;
+  }
+}
+
+span.error{
+  color: $color_milano_red_approx;
+  font-size: 12px;
+  width: 100%;
+  display: block;
+  text-align: right;
+}
+
+.footer{
+  height: 15px;
+  position: fixed;
+  font-size: 10px;
+  bottom: 0;
+  background: $color_tapa_approx;
+  color: $white;
+  width: 100%;
+}
+
+.login-container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+    text-align: center;
+
+    input[type="password"]{
+      margin-top: 10px;
+    }
+
+    button{
+      margin-top: 10px;      
+    }
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin .form-signin-heading, .form-signin .checkbox {
+    margin-bottom: 10px;
+}
+
+.required{
+  color: $color_milano_red_approx;
+}
+
+.breadcrumbs{
+  color: $color_bahama_blue_approx;
+}
