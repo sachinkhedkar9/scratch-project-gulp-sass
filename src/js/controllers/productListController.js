@@ -1,5 +1,5 @@
 shoppingApp.controller('productListController', ["$scope", "$location", "$http", function($scope, $location, $http){
-    $scope.category = ['A', 'B', 'C']
+    $scope.category = ['A', 'B', 'C'];
     
     $scope.products = [
         {
